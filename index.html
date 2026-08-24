@@ -25,6 +25,19 @@
 .qr-code { width: 10rem; height: 10rem; padding: .6rem; background: #fff; border: 1px solid var(--line); }
 @media (max-width: 600px) { .qr-wrap { display: block; } .qr-code { display: block; margin-top: 2rem; } }
 </style>
+<style>
+.hero { position: relative; isolation: isolate; overflow: hidden; }
+.hero::before { content: "SPORT / 01"; position: absolute; top: 2rem; right: var(--gutter); color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+.hero::after { content: ""; position: absolute; z-index: -1; right: -8rem; bottom: -12rem; width: min(58vw, 42rem); aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 0 3rem var(--paper), 0 0 0 3.1rem var(--line); }
+.hero-copy { position: relative; z-index: 1; }
+.hero-copy::before { content: "CLASSEMENT OUVERT"; display: block; margin-bottom: 1.2rem; color: var(--red); font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+.hero-copy::after { content: "4,9 / 5"; display: block; margin-top: 2.4rem; color: var(--red); font: 700 2rem/1 Fraunces,Georgia,serif; }
+.hero-mark { background: repeating-linear-gradient(90deg, transparent 0 18%, var(--line) 18% calc(18% + 1px)); }
+.hero-mark::before { inset: 7% 5%; border: 2px solid var(--ink); border-radius: 0; transform: skewY(-12deg); }
+.hero-mark::after { top: 27%; right: 19%; width: 42%; border-radius: 50%; transform: none; }
+.mark-line { top: 52%; left: -5%; width: 110%; transform: rotate(-12deg); }
+@media (max-width:700px) { .hero::before { top: 1.5rem; right: var(--gutter); } .hero::after { right: -11rem; bottom: -8rem; width: 85vw; } .hero-copy::after { margin-top: 1.6rem; } }
+</style>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="#accueil">Sport <span>box</span></a><nav aria-label="Navigation principale"><a href="#classement">Le classement</a><a href="sportifs.html">Les sportifs</a><a href="#proposer">Proposer un moment</a></nav></header>
